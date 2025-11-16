@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico - Cozinha</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Histórico de pedidos</span>
+      <div class="d-flex">
+        <a href="cozinha.html" class="btn btn-outline-light btn-sm me-2">Voltar Cozinha</a>
+        <a href="login.html" class="btn btn-outline-light btn-sm">Sair</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h4 class="m-0">Pedidos de pratos entregues</h4>
+      <button id="btnAtualizarHistoricoCozinha" class="btn btn-primary btn-sm">
+        Atualizar
+      </button>
+    </div>
+
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>Pedido</th>
+          <th>Mesa</th>
+          <th>Cliente</th>
+          <th>Produto</th>
+          <th>Qtd</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyHistoricoCozinha"></tbody>
+    </table>
+  </div>
+
+  <script src="historico_cozinha.js"></script>
+</body>
+</html>

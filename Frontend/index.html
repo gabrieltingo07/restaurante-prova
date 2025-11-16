@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio</title>
+
+  <!-- Bootstrap início-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Bootstrap Fim-->
+
+</head>
+<body>
+
+  <!-- Header início -->
+  <header class="text-center py-3 bg-light bg-opacity-50 backdrop-blur">
+    <h2 class="m-0">Cardápio</h2><a href="login.html" class="btn btn-sm btn-outline-secondary ms-2">Login</a>
+  </header>
+
+  <!-- Header Fim -->
+
+  <!-- Botão Carrinho -->
+  <button id="btnCarrinho" class="btn btn-dark position-fixed top-0 end-0 m-3 rounded-circle p-3 shadow"
+          data-bs-toggle="modal" data-bs-target="#modalCarrinho">
+    <i class="bi bi-cart-fill fs-4"></i>
+    <span id="contadorCarrinho" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+  </button>
+
+  <!-- Main -->
+  <main class="container my-4">
+    <div class="row justify-content-center g-4">
+
+      <!--Bebidas-->
+      
+      <div class="col-md-4">
+        <div class="card shadow-sm bg-white bg-opacity-75">
+          <div class="card-body" id="bebidas">
+            <h5 class="text-center mb-3">Bebidas</h5>
+
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-2">
+              <span class="mb-2 mb-sm-0">Coca-Cola Lata</span>
+              <div class="d-flex align-items-center gap-2">
+                <button id="menosCoca" class="btn btn-outline-dark btn-sm">-</button>
+                <input id="qtdCoca" type="text" value="0" readonly class="form-control form-control-sm text-center" style="max-width:70px;">
+                <button id="maisCoca" class="btn btn-outline-dark btn-sm">+</button>
+              </div>
+            </div>
+
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-2">
+              <span class="mb-2 mb-sm-0">Suco de Laranja</span>
+              <div class="d-flex align-items-center gap-2">
+                <button id="menosSuco" class="btn btn-outline-dark btn-sm">-</button>
+                <input id="qtdSuco" type="text" value="0" readonly class="form-control form-control-sm text-center" style="max-width:70px;">
+                <button id="maisSuco" class="btn btn-outline-dark btn-sm">+</button>
+              </div>
+            </div>
+
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-2">
+              <span class="mb-2 mb-sm-0">Água</span>
+              <div class="d-flex align-items-center gap-2">
+                <button id="menosAgua" class="btn btn-outline-dark btn-sm">-</button>
+                <input id="qtdAgua" type="text" value="0" readonly class="form-control form-control-sm text-center" style="max-width:70px;">
+                <button id="maisAgua" class="btn btn-outline-dark btn-sm">+</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pratos -->
+      <div class="col-md-4">
+        <div class="card shadow-sm bg-white bg-opacity-75">
+          <div class="card-body" id="pratos">
+            <h5 class="text-center mb-3">Pratos</h5>
+
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-2">
+              <span class="mb-2 mb-sm-0">Feijoada</span>
+              <div class="d-flex align-items-center gap-2">
+                <button id="menosFeijoada" class="btn btn-outline-dark btn-sm">-</button>
+                <input id="qtdFeijoada" type="text" value="0" readonly class="form-control form-control-sm text-center" style="max-width:70px;">
+                <button id="maisFeijoada" class="btn btn-outline-dark btn-sm">+</button>
+              </div>
+            </div>
+
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-2">
+              <span class="mb-2 mb-sm-0">Lasanha</span>
+              <div class="d-flex align-items-center gap-2">
+                <button id="menosLasanha" class="btn btn-outline-dark btn-sm">-</button>
+                <input id="qtdLasanha" type="text" value="0" readonly class="form-control form-control-sm text-center" style="max-width:70px;">
+                <button id="maisLasanha" class="btn btn-outline-dark btn-sm">+</button>
+              </div>
+            </div>
+
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-2">
+              <span class="mb-2 mb-sm-0">Macarrão</span>
+              <div class="d-flex align-items-center gap-2">
+                <button id="menosMacarrao" class="btn btn-outline-dark btn-sm">-</button>
+                <input id="qtdMacarrao" type="text" value="0" readonly class="form-control form-control-sm text-center" style="max-width:70px;">
+                <button id="maisMacarrao" class="btn btn-outline-dark btn-sm">+</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <button id="btnFazerPedido" type="button" class="btn btn-success">Adicionar pedido</button>
+    </div>
+  </main>
+
+  <!-- Modal Carrinho -->
+  <div class="modal fade" id="modalCarrinho" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Carrinho</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div id="modalBodyCarrinho" class="modal-body">
+          Nenhum item adicionado ainda.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
