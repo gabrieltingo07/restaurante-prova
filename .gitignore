@@ -1,0 +1,22 @@
+# Pastas de build
+bin/
+obj/
+
+# Configurações locais da IDE
+.vs/
+.vscode/
+
+# Arquivos dos usuário
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Bancos locais
+*.db
+*.sqlite
+
+# Configurações de desenvolvimento.
+appsettings.Development.json
+appsettings.Local.json
