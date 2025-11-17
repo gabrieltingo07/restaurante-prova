@@ -1,4 +1,3 @@
-
 --Criar banco de DADOS (RestauranteDb)
 IF DB_ID('RestauranteDb') IS NULL
 BEGIN
@@ -13,7 +12,7 @@ GO
 
 ------------------------------------------------------------
 
--- Apagar tabelas antigas (se existirem)
+-- Apagar tabelas antigas:
 
 
 IF OBJECT_ID('PedidoItens', 'U') IS NOT NULL
@@ -46,7 +45,7 @@ CREATE TABLE Pedidos (
     Mesa         NVARCHAR(10)   NOT NULL,
     NomeCliente  NVARCHAR(100)  NOT NULL,
     Telefone     NVARCHAR(20)   NULL,
-    Status       NVARCHAR(20)   NOT NULL   -- 'EmPreparo', 'Pronto', 'Entregue'
+    Status       NVARCHAR(20)   NOT NULL  --Status de preparo
 );
 GO
 

@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: restaurante_api
+    ports:
+      - "7000:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=restaurante;User=sa;Password=Admin123!;TrustServerCertificate=True;
+    restart: always
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: restaurante_sql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Admin123!
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    restart: always
+
+volumes:
+  sql_data:
