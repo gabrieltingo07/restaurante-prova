@@ -13,7 +13,7 @@ RUN dotnet restore "RestauranteProva.csproj"
 # Publica o projeto em modo Release para a pasta /app
 RUN dotnet publish "RestauranteProva.csproj" -c Release -o /app
 
-# --- Imagem final (runtime) ---
+# --- Imagem final ---
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 
 WORKDIR /app
@@ -21,7 +21,7 @@ WORKDIR /app
 # Copia os arquivos publicados da imagem de build
 COPY --from=build /app .
 
-# (Opcional) expor porta, se quiser
+# (Opcional) expor porta.
 EXPOSE 8080
 
 # Sobe a aplicação

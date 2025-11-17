@@ -32,7 +32,7 @@ Para o backend em C# foram utilizados os seguintes pacotes NuGet:
 Esses pacotes já estão referenciados no arquivo de projeto (.csproj),
 portanto não é necessário instalá-los manualmente um por um.
 
-- No terminal do VSCode escreva: dotnet restore para instalar todos os pacotes para rodar o sistema corretamente.
+- No terminal do VSCode escreva: dotnet restore RestauranteProva.csproj para instalar todos os pacotes para rodar o sistema corretamente.
 
 ================================================================================
 2. Estrutura das pastas.

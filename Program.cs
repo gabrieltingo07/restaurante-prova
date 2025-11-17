@@ -20,37 +20,38 @@ builder.Services.AddCors(options =>
     });
 });
 
-// =====================
-//     Controllers
-// =====================
+
+//Controllers
+
 builder.Services.AddControllers();
 
-// =====================
-//      Build app
-// =====================
+
+//Build app
+
 var app = builder.Build();
 
-// =====================
-//    Pipeline correto
-// =====================
 
-// 1) Serve arquivos estáticos (HTML, JS, CSS)
+//Pipeline correto
+
+
+//Serve arquivos estáticos (HTML, JS, CSS)
+
 app.UseStaticFiles();
 
-// 2) Cria o pipeline de roteamento
+//Cria o pipeline de roteamento
 app.UseRouting();
 
-// 3) Habilita CORS (antes do MapControllers)
+//Habilita CORS (antes do MapControllers)
 app.UseCors(myCorsPolicy);
 
-// 4) Autorização (se houver) — pode ser removido se não usar auth
+//Autorização (se houver) — pode ser removido se não usar auth
 app.UseAuthorization();
 
-// 5) Mapeia os endpoints da API
+//Mapeia os endpoints da API
 app.MapControllers();
 
-// 6) Fallback para SPA — precisa vir DEPOIS do MapControllers
+//Fallback para SPA — precisa vir DEPOIS do MapControllers
 app.MapFallbackToFile("index.html");
 
-// 7) Inicia servidor
+//Inicia servidor
 app.Run();

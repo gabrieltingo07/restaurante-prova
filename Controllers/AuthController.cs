@@ -28,7 +28,6 @@ namespace ProjetoRestaurante.Controllers
                 return BadRequest(new { message = "Usuário ou senha vazios." });
             }
 
-            // ***** USUÁRIOS FIXOS SÓ PARA A PROVA *****
             // cozinha / 123  -> vai pra tela da cozinha
             if (dto.Username == "cozinha" && dto.Senha == "123")
             {
@@ -49,7 +48,7 @@ namespace ProjetoRestaurante.Controllers
                 });
             }
 
-            // qualquer outro → inválido
+            // qualquer outro --> inválido
             return Unauthorized(new { message = "Usuário ou senha inválidos." });
         }
     }
